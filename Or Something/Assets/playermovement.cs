@@ -46,7 +46,9 @@ public class playermovement : MonoBehaviour
         }
         if (locked)
         {
+            float oldY = moveDirection.y;
             moveDirection = Vector3.zero;
+            moveDirection.y = oldY;
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
